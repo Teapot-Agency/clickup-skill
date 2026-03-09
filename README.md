@@ -26,7 +26,7 @@ The shell script (`scripts/clickup.sh`) handles authentication, HTTP requests, e
 ## Quick Setup
 
 ```bash
-git clone https://github.com/user/clickup-skill.git
+git clone https://github.com/Teapot-Agency/clickup-skill.git
 cd clickup-skill
 bash setup.sh
 ```
