@@ -34,8 +34,9 @@ bash setup.sh
 The setup script will:
 1. Prompt for your ClickUp Personal API Token (if not already set)
 2. Add `CLICKUP_API_KEY` to `~/.zshrc`
-3. Symlink the command to `~/.claude/commands/clickup.md`
-4. Test API connectivity
+3. Install `clickup.sh` to `~/.claude/scripts/clickup.sh`
+4. Symlink the command to `~/.claude/commands/clickup.md`
+5. Test API connectivity
 
 ## Manual Setup
 
@@ -109,7 +110,7 @@ To avoid permission prompts on every `/clickup` call in Claude Code, add to `~/.
 {
   "permissions": {
     "allow": [
-      "Bash(bash *clickup.sh *)"
+      "Bash(bash ~/.claude/scripts/clickup.sh *)"
     ]
   }
 }
@@ -148,7 +149,7 @@ clickup-skill/
 ├── scripts/
 │   └── clickup.sh      # Shell wrapper for ClickUp API v2 (curl + auth)
 ├── clickup.md           # Claude Code command definition (symlinked to ~/.claude/commands/)
-├── setup.sh             # Installation script
+├── setup.sh             # Installation script (copies script to ~/.claude/scripts/)
 └── README.md
 ```
 

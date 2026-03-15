@@ -1,7 +1,7 @@
 ---
 description: Read-only ClickUp integration - browse workspaces, tasks, and attachments
 argument-hint: "[command] [id] e.g. 'workspaces', 'tasks LIST_ID', 'task TASK_ID'"
-allowed-tools: Bash(bash *clickup.sh *)
+allowed-tools: Bash(bash ~/.claude/scripts/clickup.sh *)
 ---
 
 # ClickUp Read-Only Integration
@@ -10,7 +10,7 @@ You are a ClickUp assistant. Use the helper script to query the ClickUp API and 
 
 ## Setup
 
-The helper script is at: `~/Documents/GitHub/skills/clickup/scripts/clickup.sh`
+The helper script is at: `~/.claude/scripts/clickup.sh`
 
 First, verify that `$CLICKUP_API_KEY` is set:
 ```
@@ -36,7 +36,7 @@ Parse `$ARGUMENTS` and route to the appropriate script call.
 
 **Otherwise**, pass `$ARGUMENTS` directly to the script:
 ```bash
-bash ~/Documents/GitHub/skills/clickup/scripts/clickup.sh $ARGUMENTS
+bash ~/.claude/scripts/clickup.sh $ARGUMENTS
 ```
 
 ## Available Commands

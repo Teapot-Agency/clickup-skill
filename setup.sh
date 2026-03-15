@@ -5,6 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 COMMAND_SOURCE="${SCRIPT_DIR}/clickup.md"
 COMMAND_TARGET="$HOME/.claude/commands/clickup.md"
 HELPER_SCRIPT="${SCRIPT_DIR}/scripts/clickup.sh"
+HELPER_TARGET="$HOME/.claude/scripts/clickup.sh"
 
 echo "=== ClickUp Skill Setup ==="
 echo
@@ -33,9 +34,11 @@ else
 fi
 echo
 
-# 2. Make helper script executable
-chmod +x "$HELPER_SCRIPT"
-echo "Made clickup.sh executable."
+# 2. Copy helper script to well-known location
+mkdir -p "$HOME/.claude/scripts"
+cp "$HELPER_SCRIPT" "$HELPER_TARGET"
+chmod +x "$HELPER_TARGET"
+echo "Installed clickup.sh to $HELPER_TARGET"
 
 # 3. Create commands directory and symlink
 mkdir -p "$HOME/.claude/commands"
